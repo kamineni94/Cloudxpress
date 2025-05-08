@@ -9,17 +9,17 @@
       body {
         margin: 0;
         font-family: 'Inter', sans-serif;
-        background: #fff8e1; /* light yellow */
+        background: #fff8e1;
         color: #333;
       }
       header {
-        background: #ff9800; /* orange */
+        background: #ff9800;
         color: white;
         padding: 2rem;
         text-align: center;
       }
       nav {
-        background: #f57c00; /* darker orange */
+        background: #f57c00;
         padding: 1rem;
         text-align: center;
       }
@@ -35,7 +35,7 @@
         margin: auto;
       }
       h2 {
-        color: #f57c00; /* dark orange */
+        color: #f57c00;
       }
       .services {
         display: grid;
@@ -43,16 +43,28 @@
         gap: 2rem;
       }
       .card {
-        background: #fffde7; /* pale yellow */
+        background: #fffde7;
         padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        border-left: 5px solid #ffb300; /* accent */
+        border-left: 5px solid #ffb300;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+      }
+      .hero-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        margin-bottom: 2rem;
+        border-radius: 8px;
       }
       footer {
         text-align: center;
         padding: 2rem;
-        background: #ff9800; /* orange */
+        background: #ff9800;
         color: white;
       }
     </style>
@@ -70,6 +82,7 @@
     </nav>
 
     <section id="about">
+      <img class="hero-img" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400" alt="Team at work">
       <h2>About Us</h2>
       <p>CloudXpress provides modern IT consulting services that empower businesses with cloud transformation, DevOps, and scalable infrastructure solutions.</p>
     </section>
@@ -78,14 +91,17 @@
       <h2>Our Services</h2>
       <div class="services">
         <div class="card">
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Cloud Migration">
           <h3>Cloud Migration</h3>
           <p>Move your legacy systems to modern cloud environments like Azure or AWS.</p>
         </div>
         <div class="card">
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="DevOps Consulting">
           <h3>DevOps Consulting</h3>
           <p>CI/CD pipelines, containerization, and automation with tools like GitHub Actions and Kubernetes.</p>
         </div>
         <div class="card">
+          <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Security & Compliance">
           <h3>Security & Compliance</h3>
           <p>Keep your infrastructure secure and compliant with industry standards.</p>
         </div>
