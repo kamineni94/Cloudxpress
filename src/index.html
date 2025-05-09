@@ -21,7 +21,6 @@
       color: inherit;
     }
     header {
-      background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900');
       background-size: cover;
       background-position: center;
       height: 90vh;
@@ -33,6 +32,7 @@
       text-align: center;
       padding: 0 2rem;
       position: relative;
+      transition: background 1s ease-in-out;
     }
     header::after {
       content: '';
@@ -217,7 +217,7 @@
 </head>
 <body>
 
-  <header>
+  <header id="header">
     <h1>CloudXpress</h1>
     <p>Your Trusted IT Consulting Partner</p>
     <a href="#services"><button class="cta">Explore Services</button></a>
@@ -264,7 +264,9 @@
         <p>Master Azure services from scratch and gain certification-ready skills.</p>
       </div>
     </div>
-     <!-- Careers Section -->
+  </section>
+
+  <!-- Careers Section -->
   <section id="careers">
     <h2>Careers</h2>
     <p>We're looking for dynamic, tech-savvy individuals eager to take their careers to the next level. Join us and work on challenging, high-impact projects.</p>
@@ -278,11 +280,11 @@
     <p>Have questions or need more information? Get in touch with us:</p>
     <p>akhila.kamineni@cloudxpress.co.uk</p>
     <p>
-  <a href="https://wa.me/447466862056" target="_blank">
-    <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
-    +44 7466862056
-  </a>
-</p>
+      <a href="https://wa.me/447466862056" target="_blank">
+        <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
+        +44 7466862056
+      </a>
+    </p>
     <div class="map">
       <iframe src="https://maps.google.com/maps?q=Your%20Business%20Address&output=embed" frameborder="0" style="width:100%;height:100%;" allowfullscreen></iframe>
     </div>
@@ -298,6 +300,23 @@
     </div>
     <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    const bannerImages = [
+      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900',
+      'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800',
+      'https://images.pexels.com/photos/1759245/pexels-photo-1759245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700'
+    ];
+    
+    let currentIndex = 0;
+    
+    function changeBannerImage() {
+      document.getElementById('header').style.backgroundImage = `url(${bannerImages[currentIndex]})`;
+      currentIndex = (currentIndex + 1) % bannerImages.length;
+    }
+    
+    setInterval(changeBannerImage, 5000);  // Change image every 5 seconds
+  </script>
 
 </body>
 </html>
