@@ -7,102 +7,140 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: #fff8e1;
       color: #333;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     header {
+      background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .cta {
       background: #ff9800;
       color: white;
       padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
+    .cta:hover {
+      background: #fb8c00;
     }
     nav {
       background: #f57c00;
       padding: 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
     section {
-      padding: 3rem 2rem;
-      max-width: 960px;
+      padding: 4rem 2rem;
+      max-width: 1100px;
       margin: auto;
     }
     h2 {
+      text-align: center;
       color: #f57c00;
+      margin-bottom: 2rem;
     }
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
     .card {
-      background: #fffde7;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-left: 5px solid #ffb300;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 1rem;
     }
-    .hero-img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      margin-bottom: 2rem;
-      border-radius: 8px;
+    .card h3 {
+      margin: 1rem;
+      color: #ff9800;
     }
-    iframe {
+    .card p {
+      margin: 0 1rem 1.5rem;
+    }
+    .map {
       width: 100%;
       height: 300px;
-      border: 0;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 1rem;
     }
-    footer {
+    .contact, .careers {
       text-align: center;
-      padding: 2rem;
+    }
+    footer {
       background: #ff9800;
       color: white;
+      text-align: center;
+      padding: 2rem 1rem;
     }
     .social-icons a {
       margin: 0 10px;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ffe082;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/3184/3184726.png" alt="CloudXpress Logo">
-      <div>
-        <h1 style="margin: 0;">CloudXpress</h1>
-        <p style="margin: 0;">Your Trusted IT Consulting Partner</p>
-      </div>
-    </div>
+    <h1>CloudXpress</h1>
+    <p>Your Trusted IT Consulting Partner</p>
+    <a href="#services"><button class="cta">Explore Services</button></a>
   </header>
 
   <nav>
@@ -113,59 +151,55 @@
   </nav>
 
   <section id="about">
-    <img class="hero-img" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400" alt="Team at work">
     <h2>About Us</h2>
-    <p>At CloudXpress, we specialize in helping organizations embrace digital transformation through agile, cloud-first solutions. With deep industry knowledge and a focus on innovation, we offer a unique mix of strategy, design, and engineering to deliver measurable results.</p>
-    <p>Our mission is to empower businesses through cloud-native tools and intelligent automation. We partner with clients to reimagine their IT capabilities, reduce operational complexity, and unlock scalable growth—on time and on budget.</p>
+    <p style="text-align: center; max-width: 800px; margin: auto;">CloudXpress is a premier IT consulting firm, enabling businesses to adopt secure, scalable cloud-native infrastructure and DevOps practices. We drive value through strategic planning, unmatched technical expertise, and unwavering dedication to excellence.</p>
   </section>
 
   <section id="services">
     <h2>Our Services</h2>
     <div class="services">
       <div class="card">
-        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Cloud Migration">
+        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Cloud Migration</h3>
-        <p>Move your legacy systems to modern cloud environments like Azure or AWS seamlessly and securely.</p>
+        <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
       </div>
       <div class="card">
-        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="DevOps">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>DevOps Consulting</h3>
-        <p>Streamline your development processes using CI/CD, Docker, GitHub Actions, and Kubernetes.</p>
+        <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
       </div>
       <div class="card">
-        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Security">
+        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Security & Compliance</h3>
-        <p>Stay secure and compliant with proactive auditing, monitoring, and best practices for data protection.</p>
+        <p>Protect your infrastructure and meet industry standards with confidence.</p>
       </div>
       <div class="card">
-        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Internships">
+        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Unpaid Internships</h3>
-        <p>We offer internships to students and freshers looking to gain real-world IT experience.</p>
+        <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
       </div>
       <div class="card">
-        <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="Azure Training">
+        <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Azure Cloud Training</h3>
-        <p>Get hands-on with Azure through beginner to expert-level cloud certification programs.</p>
+        <p>Master Azure services from scratch and gain certification-ready skills.</p>
       </div>
     </div>
   </section>
 
-  <section id="careers">
+  <section id="careers" class="careers">
     <h2>Careers</h2>
-    <p>We’re always looking for passionate individuals who want to make a difference in the world of cloud and IT services. Join our fast-growing team and build the future with us!</p>
-    <ul>
-      <li>Openings: Cloud Engineer, DevOps Intern, Azure Instructor</li>
-      <li>Email your resume to: <a href="mailto:careers@cloudxpress.co.uk">careers@cloudxpress.co.uk</a></li>
-    </ul>
+    <p>We’re growing and looking for cloud innovators and creative thinkers.</p>
+    <p>Open Roles: Cloud Engineer, DevOps Intern, Azure Instructor</p>
+    <p>Email your CV: <a href="mailto:careers@cloudxpress.co.uk">careers@cloudxpress.co.uk</a></p>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:akhila.kamineni@cloudxpress.co.uk">akhila.kamineni@cloudxpress.co.uk</a></p>
     <p>Phone: +1 (555) 123-4567</p>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.2924488795!2d-0.5103750470100217!3d51.28676016539264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876027f9d1e2941%3A0xe21d9a61cf0e2a1e!2sLondon!5e0!3m2!1sen!2suk!4v1715206002213!5m2!1sen!2suk" 
-      allowfullscreen="" 
+    <iframe class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.2924488795!2d-0.5103750470100217!3d51.28676016539264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876027f9d1e2941%3A0xe21d9a61cf0e2a1e!2sLondon!5e0!3m2!1sen!2suk!4v1715206002213!5m2!1sen!2suk"
+      allowfullscreen=""
       loading="lazy">
     </iframe>
   </section>
@@ -176,6 +210,3 @@
       <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-  </footer>
-</body>
-</html>
