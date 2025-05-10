@@ -318,6 +318,17 @@
       currentIndex = (currentIndex + 1) % bannerImages.length;
     }
     setInterval(changeBannerImage, 5000);
+    
+    // Shuffle only swirl cards
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('service-tiles');
+      const cards = Array.from(container.querySelectorAll('.card.swirl'));
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      cards.forEach(card => container.prepend(card));
+    });
   </script>
 
 </body>
