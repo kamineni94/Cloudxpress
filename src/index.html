@@ -7,8 +7,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* Your full existing CSS remains here — no removed content */
-    /* Only relevant improvements are added */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
 
     .services {
       display: grid;
@@ -21,12 +69,11 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, rotate 2s linear;
-      position: relative;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: rotate(3deg) translateY(-5px);
+      transform: rotate(1deg) scale(1.02);
     }
 
     .card img {
@@ -38,7 +85,7 @@
     .card h3 {
       margin: 1rem;
       color: #ff9800;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     }
 
     .card p {
@@ -46,19 +93,47 @@
       padding: 1rem;
       background: rgba(255, 152, 0, 0.2);
       border-radius: 8px;
-      color: #333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       font-weight: 500;
     }
 
-    .card p:hover {
-      background: rgba(255, 152, 0, 0.3);
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff9800;
     }
   </style>
 </head>
 <body>
 
-  <!-- All other existing sections remain unchanged -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="header">
+    <h1>Welcome to CloudXpress</h1>
+    <p>Your Partner in Cloud Innovation</p>
+  </header>
 
   <section id="services">
     <h2>Our Services</h2>
@@ -91,7 +166,20 @@
     </div>
   </section>
 
-  <!-- Careers, Contact, Footer remain unchanged -->
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>Join a team of passionate cloud professionals driving innovation.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: hello@cloudxpress.co.uk</p>
+    <p>Phone: +44 1234 567890</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CloudXpress. All rights reserved.</p>
+  </footer>
 
   <script>
     const bannerImages = [
@@ -99,14 +187,14 @@
       'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800',
       'https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700'
     ];
-    
+
     let currentIndex = 0;
-    
+
     function changeBannerImage() {
       document.getElementById('header').style.backgroundImage = `url(${bannerImages[currentIndex]})`;
       currentIndex = (currentIndex + 1) % bannerImages.length;
     }
-    
+
     setInterval(changeBannerImage, 5000);
 
     // Shuffle service cards
@@ -121,6 +209,5 @@
       cards.forEach(card => container.appendChild(card));
     });
   </script>
-
 </body>
 </html>
