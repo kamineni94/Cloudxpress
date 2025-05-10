@@ -7,158 +7,259 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f7f7f7;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
       color: #333;
     }
-
+    a { text-decoration: none; color: inherit; }
     header {
-      background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900');
       background-size: cover;
       background-position: center;
+      height: 90vh;
       color: white;
-      padding: 5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 0 2rem;
       position: relative;
+      transition: background 1s ease-in-out;
     }
-
     header::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
     }
-
     header h1 {
-      position: relative;
-      z-index: 1;
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin: 0;
+      z-index: 2;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     }
-
     header p {
-      position: relative;
-      z-index: 1;
       font-size: 1.2rem;
-      font-weight: 500;
+      margin: 1rem 0;
+      z-index: 2;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     }
-
+    .cta {
+      background: #ff9800;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+    .cta:hover { background: #fb8c00; }
+    nav {
+      background: #f57c00;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      z-index: 3;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+    }
     section {
       padding: 4rem 2rem;
-      max-width: 1200px;
       margin: auto;
+      border-radius: 10px;
+      position: relative;
+      background: #fff;
     }
-
-    h2 {
+    section::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+    #about {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url('https://images.pexels.com/photos/1759245/pexels-photo-1759245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
+      background-size: cover;
+      color: #333;
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
     }
-
+    #about h2 {
+      color: #f57c00;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    #services {
+      background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(255, 140, 0, 0.8));
+      color: white;
+      text-align: center;
+    }
+    #services h2 {
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    #careers {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+        url('https://images.pexels.com/photos/1239296/pexels-photo-1239296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    #careers h2 {
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+    #contact {
+      background: #ffecb3;
+      color: #333;
+      padding-bottom: 2rem;
+    }
+    #contact h2 {
+      color: #f57c00;
+      text-align: center;
+    }
+    #contact p a {
+      color: #ff9800;
+      font-weight: bold;
+    }
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
-
     .card {
       background: white;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      position: relative;
     }
-
     .card:hover {
-      transform: rotate(1deg) scale(1.02);
+      transform: translateY(-5px);
     }
-
     .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
-
     .card h3 {
       margin: 1rem;
       color: #ff9800;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
-
     .card p {
       margin: 0 1rem 1.5rem;
       padding: 1rem;
       background: rgba(255, 152, 0, 0.2);
       border-radius: 8px;
+      color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       font-weight: 500;
     }
-
+    .card p:hover {
+      background: rgba(255, 152, 0, 0.3);
+    }
+    .swirl-icon {
+      font-size: 3rem;
+      color: #ff9800;
+      margin: 1rem 0 0;
+      animation: swirl 2s infinite linear;
+    }
+    @keyframes swirl {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    .contact, .careers {
+      text-align: center;
+    }
     footer {
-      background: #222;
-      color: #ccc;
+      background: #ff9800;
+      color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
-
-    nav {
-      background: #fff;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
     }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
+    .social-icons a:hover {
+      color: #ffe082;
     }
-
-    nav a:hover {
-      color: #ff9800;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <header id="header">
+    <h1>CloudXpress</h1>
+    <p>Your Trusted IT Consulting Partner</p>
+    <a href="#services"><button class="cta">Explore Services</button></a>
+  </header>
+
   <nav>
-    <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#careers">Careers</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <header id="header">
-    <h1>Welcome to CloudXpress</h1>
-    <p>Your Partner in Cloud Innovation</p>
-  </header>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>CloudXpress is a premier IT consulting firm, enabling businesses to adopt secure, scalable cloud-native infrastructure and DevOps practices.</p>
+  </section>
 
   <section id="services">
     <h2>Our Services</h2>
-    <div class="services" id="services-container">
-      <div class="card">
+    <div class="services" id="service-tiles">
+      <div class="card swirl">
+        <i class="fas fa-cloud-upload-alt swirl-icon"></i>
         <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Cloud Migration</h3>
-        <p>Transition your legacy systems to Azure or AWS with minimal disruption. Seamlessly Migrate to the Cloud — Unlock Scalability, Security, and Speed with CloudXpress.</p>
+        <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
       </div>
-      <div class="card">
+      <div class="card swirl">
+        <i class="fas fa-cogs swirl-icon"></i>
         <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>DevOps Consulting</h3>
-        <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes. Build Fast, Deploy Faster — CloudXpress Delivers DevOps That Scale.</p>
+        <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
       </div>
-      <div class="card">
+      <div class="card swirl">
+        <i class="fas fa-shield-alt swirl-icon"></i>
         <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Security & Compliance</h3>
-        <p>Protect your infrastructure and meet industry standards with confidence. Secure. Comply. Thrive. — CloudXpress Ensures Your Cloud Infrastructure Meets the Highest Standards.</p>
+        <p>Protect your infrastructure and meet industry standards with confidence.</p>
       </div>
       <div class="card">
         <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Internships</h3>
         <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
       </div>
-      <div class="card">
+      <div class="card swirl">
+        <i class="fas fa-graduation-cap swirl-icon"></i>
         <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
         <h3>Azure Cloud Training</h3>
         <p>Master Azure services from scratch and gain certification-ready skills.</p>
@@ -168,17 +269,34 @@
 
   <section id="careers">
     <h2>Careers</h2>
-    <p>Join a team of passionate cloud professionals driving innovation.</p>
+    <p>We're looking for dynamic, tech-savvy individuals. Join us and work on high-impact projects.</p>
+    <p>Email us your resume</p>
+    <p>mailto: akhila.kamineni@cloudxpress.co.uk</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: hello@cloudxpress.co.uk</p>
-    <p>Phone: +44 1234 567890</p>
+    <p>Have questions or need more information? Get in touch with us:</p>
+    <p>akhila.kamineni@cloudxpress.co.uk</p>
+    <p>
+      <a href="https://wa.me/447466862056" target="_blank">
+        <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
+        +44 7466862056
+      </a>
+    </p>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=Your%20Business%20Address&output=embed" frameborder="0" style="width:100%;height:100%;" allowfullscreen></iframe>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 CloudXpress. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
   </footer>
 
   <script>
@@ -187,27 +305,24 @@
       'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800',
       'https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700'
     ];
-
     let currentIndex = 0;
-
     function changeBannerImage() {
       document.getElementById('header').style.backgroundImage = `url(${bannerImages[currentIndex]})`;
       currentIndex = (currentIndex + 1) % bannerImages.length;
     }
-
     setInterval(changeBannerImage, 5000);
 
-    // Shuffle service cards
-    window.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("services-container");
-      const cards = Array.from(container.children);
+    // Shuffle only swirl cards
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('service-tiles');
+      const cards = Array.from(container.querySelectorAll('.card.swirl'));
       for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cards[i], cards[j]] = [cards[j], cards[i]];
       }
-      container.innerHTML = '';
-      cards.forEach(card => container.appendChild(card));
+      cards.forEach(card => container.prepend(card));
     });
   </script>
+
 </body>
 </html>
