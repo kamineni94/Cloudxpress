@@ -31,8 +31,6 @@
     }
 
     header {
-      background-size: cover;
-      background-position: center;
       height: 90vh;
       color: white;
       display: flex;
@@ -42,15 +40,38 @@
       text-align: center;
       padding: 0 2rem;
       position: relative;
-      transition: background 1s ease-in-out;
+      overflow: hidden;
     }
-    header::after {
-      content: '';
+
+    .banner-slider {
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .banner-track {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slideBanner 15s infinite linear;
+    }
+
+    .banner-slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    @keyframes slideBanner {
+      0%   { transform: translateX(0%); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
     }
 
     header h1 {
@@ -158,22 +179,21 @@
       gap: 2rem;
     }
 
-   .card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
 
-.card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5), 0 0 20px rgba(255, 152, 0, 0.4);
-  z-index: 2;
-  animation: bounce 0.6s ease-out;
-}
-
+    .card:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5), 0 0 20px rgba(255, 152, 0, 0.4);
+      z-index: 2;
+      animation: bounce 0.6s ease-out;
+    }
 
     .card img {
       width: 100%;
@@ -237,15 +257,14 @@
       header h1 {
         font-size: 2.2rem;
       }
+    }
 
-      @keyframes bounce {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.1); }
-  60%  { transform: scale(1.06); }
-  80%  { transform: scale(1.08); }
-  100% { transform: scale(1.07); }
-}
-
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.1); }
+      60% { transform: scale(1.06); }
+      80% { transform: scale(1.08); }
+      100% { transform: scale(1.07); }
     }
   </style>
 </head>
@@ -262,22 +281,31 @@
 
   <!-- Banner/Header -->
   <header id="header">
-    <div class="header-social-icons">
-      <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <div class="banner-slider">
+      <div class="banner-track">
+        <div class="banner-slide" style="background-image: url('cx1.jpeg');"></div>
+        <div class="banner-slide" style="background-image: url('cx2.jpeg');"></div>
+        <div class="banner-slide" style="background-image: url('cx3.jpeg');"></div>
+      </div>
     </div>
+
+    <div class="header-social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
     <h1>CloudXpress</h1>
     <p>Your Trusted IT Consulting Partner</p>
-    <a href="#services"><button class="cta" aria-label="Explore Services">Explore Services</button></a>
+    <a href="#services"><button class="cta">Explore Services</button></a>
   </header>
 
   <main>
     <!-- About Section -->
     <section id="about">
       <h2>About Us</h2>
-      <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure. We offer comprehensive training programs to enhance skills in various IT domains. Additionally, we provide internship opportunities for hands-on experience in real-world projects. Our goal is to empower businesses and individuals with the tools and knowledge to succeed in the ever-evolving tech landscape.</p>
+      <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure...</p>
     </section>
 
     <!-- Services Section -->
@@ -325,18 +353,15 @@
     <!-- Careers Section -->
     <section id="careers">
       <h2>Careers</h2>
-      <p>We're looking for dynamic, tech-savvy individuals. Join us and work on high-impact projects.</p>
-      <p>Email us your resume:</p>
-      <p><a href="mailto:akhila.kamineni@cloudxpress.co.uk">akhila.kamineni@cloudxpress.co.uk</a></p>
+      <p>We're looking for dynamic, tech-savvy individuals...</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Us</h2>
-      <p>Have questions or need more information? Get in touch with us:</p>
       <p><a href="mailto:akhila.kamineni@cloudxpress.co.uk">akhila.kamineni@cloudxpress.co.uk</a></p>
       <p>
-        <a href="https://wa.me/447466862056" target="_blank" rel="noopener">
+        <a href="https://wa.me/447466862056" target="_blank">
           <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
           +44 7466862056
         </a>
@@ -350,41 +375,14 @@
   <!-- Footer -->
   <footer>
     <div class="social-icons">
-      <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
     <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    const bannerImages = [
-      'cx1.jpeg',
-      'cx2.jpeg',
-      'cx3.jpeg'
-    ];
-    let currentIndex = 0;
-    function changeBannerImage() {
-      document.getElementById('header').style.backgroundImage = `url(${bannerImages[currentIndex]})`;
-      currentIndex = (currentIndex + 1) % bannerImages.length;
-    }
-    setInterval(changeBannerImage, 5000);
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('service-tiles');
-      if (!container.dataset.shuffled) {
-        const cards = Array.from(container.querySelectorAll('.card.swirl'));
-        for (let i = cards.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [cards[i], cards[j]] = [cards[j], cards[i]];
-        }
-        cards.forEach(card => container.appendChild(card));
-        container.dataset.shuffled = "true";
-      }
-    });
-  </script>
-
 </body>
+</html>
 </html>
