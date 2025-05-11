@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>CloudXpress - IT Consulting Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -263,95 +263,97 @@
   <!-- Banner/Header -->
   <header id="header">
     <div class="header-social-icons">
-      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
     </div>
     <h1>CloudXpress</h1>
     <p>Your Trusted IT Consulting Partner</p>
-    <a href="#services"><button class="cta">Explore Services</button></a>
+    <a href="#services"><button class="cta" aria-label="Explore Services">Explore Services</button></a>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure. We offer comprehensive training programs to enhance skills in various IT domains. Additionally, we provide internship opportunities for hands-on experience in real-world projects. Our goal is to empower businesses and individuals with the tools and knowledge to succeed in the ever-evolving tech landscape.</p>
-  </section>
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure. We offer comprehensive training programs to enhance skills in various IT domains. Additionally, we provide internship opportunities for hands-on experience in real-world projects. Our goal is to empower businesses and individuals with the tools and knowledge to succeed in the ever-evolving tech landscape.</p>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services" id="service-tiles">
-      <div class="card swirl">
-        <i class="fas fa-cloud-upload-alt swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="">
-        <h3>Cloud Migration</h3>
-        <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services" id="service-tiles">
+        <div class="card swirl">
+          <i class="fas fa-cloud-upload-alt swirl-icon"></i>
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="Cloud migration service image" loading="lazy" />
+          <h3>Cloud Migration</h3>
+          <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
+        </div>
+        <div class="card swirl">
+          <i class="fas fa-cogs swirl-icon"></i>
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="DevOps consulting service image" loading="lazy" />
+          <h3>DevOps Consulting</h3>
+          <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
+        </div>
+        <div class="card swirl">
+          <i class="fas fa-shield-alt swirl-icon"></i>
+          <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg" alt="Security compliance service image" loading="lazy" />
+          <h3>Security & Compliance</h3>
+          <p>Protect your infrastructure and meet industry standards with confidence.</p>
+        </div>
+        <div class="card swirl">
+          <i class="fas fa-user-graduate swirl-icon"></i>
+          <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg" alt="Internship opportunity image" loading="lazy" />
+          <h3>Internships</h3>
+          <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
+        </div>
+        <div class="card swirl">
+          <i class="fas fa-graduation-cap swirl-icon"></i>
+          <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg" alt="Azure cloud training image" loading="lazy" />
+          <h3>Azure Cloud Training</h3>
+          <p>Master Azure services from scratch and gain certification-ready skills.</p>
+          <p>
+            <a href="azure-training-contents.txt" download style="color: #ff9800; font-weight: bold;" aria-label="Download Azure training outline">
+              📄 Download Training Outline
+            </a>
+          </p>
+        </div>
       </div>
-      <div class="card swirl">
-        <i class="fas fa-cogs swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="">
-        <h3>DevOps Consulting</h3>
-        <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
-      </div>
-      <div class="card swirl">
-        <i class="fas fa-shield-alt swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg" alt="">
-        <h3>Security & Compliance</h3>
-        <p>Protect your infrastructure and meet industry standards with confidence.</p>
-      </div>
-      <div class="card swirl">
-        <i class="fas fa-user-graduate swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg" alt="">
-        <h3>Internships</h3>
-        <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
-      </div>
-      <div class="card swirl">
-        <i class="fas fa-graduation-cap swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg" alt="">
-        <h3>Azure Cloud Training</h3>
-        <p>Master Azure services from scratch and gain certification-ready skills.</p>
-        <p>
-    <a href="azure-training-contents.txt" download style="color: #ff9800; font-weight: bold;">
-      📄 Download Training Outline
-    </a>
-  </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Careers Section -->
-  <section id="careers">
-    <h2>Careers</h2>
-    <p>We're looking for dynamic, tech-savvy individuals. Join us and work on high-impact projects.</p>
-    <p>Email us your resume</p>
-    <p>mailto: akhila.kamineni@cloudxpress.co.uk</p>
-  </section>
+    <!-- Careers Section -->
+    <section id="careers">
+      <h2>Careers</h2>
+      <p>We're looking for dynamic, tech-savvy individuals. Join us and work on high-impact projects.</p>
+      <p>Email us your resume:</p>
+      <p><a href="mailto:akhila.kamineni@cloudxpress.co.uk">akhila.kamineni@cloudxpress.co.uk</a></p>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or need more information? Get in touch with us:</p>
-    <p>akhila.kamineni@cloudxpress.co.uk</p>
-    <p>
-      <a href="https://wa.me/447466862056" target="_blank">
-        <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
-        +44 7466862056
-      </a>
-    </p>
-    <div class="map">
-      <iframe src="https://maps.google.com/maps?q=Your%20Business%20Address&output=embed" frameborder="0" style="width:100%;height:100%;" allowfullscreen></iframe>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions or need more information? Get in touch with us:</p>
+      <p><a href="mailto:akhila.kamineni@cloudxpress.co.uk">akhila.kamineni@cloudxpress.co.uk</a></p>
+      <p>
+        <a href="https://wa.me/447466862056" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
+          +44 7466862056
+        </a>
+      </p>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Your%20Business%20Address&output=embed" frameborder="0" loading="lazy" style="width:100%;height:100%;" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="social-icons">
-      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
-      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
     </div>
     <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
   </footer>
@@ -372,12 +374,15 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('service-tiles');
-      const cards = Array.from(container.querySelectorAll('.card.swirl'));
-      for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
+      if (!container.dataset.shuffled) {
+        const cards = Array.from(container.querySelectorAll('.card.swirl'));
+        for (let i = cards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        cards.forEach(card => container.appendChild(card));
+        container.dataset.shuffled = "true";
       }
-      cards.forEach(card => container.prepend(card));
     });
   </script>
 
