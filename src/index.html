@@ -15,6 +15,21 @@
       color: #333;
     }
     a { text-decoration: none; color: inherit; }
+    
+    nav {
+      background: #f57c00;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      z-index: 3;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
     header {
       background-size: cover;
       background-position: center;
@@ -37,6 +52,7 @@
       background: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
+
     header h1 {
       font-size: 3rem;
       margin: 0;
@@ -49,6 +65,7 @@
       z-index: 2;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     }
+
     .cta {
       background: #ff9800;
       color: white;
@@ -62,19 +79,23 @@
       z-index: 2;
     }
     .cta:hover { background: #fb8c00; }
-    nav {
-      background: #f57c00;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+
+    .header-social-icons {
+      position: absolute;
+      top: 20px;
+      right: 30px;
       z-index: 3;
     }
-    nav a {
+    .header-social-icons a {
       color: white;
-      font-weight: 600;
+      font-size: 1.5rem;
+      margin-left: 15px;
+      transition: color 0.3s;
     }
+    .header-social-icons a:hover {
+      color: #ffe082;
+    }
+
     section {
       padding: 4rem 2rem;
       margin: auto;
@@ -82,14 +103,7 @@
       position: relative;
       background: #fff;
     }
-    section::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.05);
-      z-index: 1;
-    }
+
     #about {
       background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
         url('https://images.pexels.com/photos/1759245/pexels-photo-1759245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
@@ -101,6 +115,7 @@
       color: #f57c00;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
+
     #services {
       background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(255, 140, 0, 0.8));
       color: white;
@@ -110,6 +125,7 @@
       color: #fff;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
+
     #careers {
       background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
         url('https://images.pexels.com/photos/1239296/pexels-photo-1239296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
@@ -120,6 +136,7 @@
     #careers h2 {
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     }
+
     #contact {
       background: #ffecb3;
       color: #333;
@@ -129,15 +146,18 @@
       color: #f57c00;
       text-align: center;
     }
+
     #contact p a {
       color: #ff9800;
       font-weight: bold;
     }
+
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
+
     .card {
       background: white;
       border-radius: 10px;
@@ -149,16 +169,19 @@
     .card:hover {
       transform: translateY(-5px);
     }
+
     .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
+
     .card h3 {
       margin: 1rem;
       color: #ff9800;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
+
     .card p {
       margin: 0 1rem 1.5rem;
       padding: 1rem;
@@ -168,34 +191,33 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       font-weight: 500;
     }
-    .card p:hover {
-      background: rgba(255, 152, 0, 0.3);
-    }
+
     .swirl-icon {
       font-size: 3rem;
       color: #ff9800;
       margin: 1rem 0 0;
       animation: swirl 2s infinite linear;
     }
+
     @keyframes swirl {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
     .map {
       width: 100%;
       height: 300px;
       border-radius: 10px;
       margin-top: 1rem;
     }
-    .contact, .careers {
-      text-align: center;
-    }
+
     footer {
       background: #ff9800;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
+
     .social-icons a {
       margin: 0 10px;
       color: white;
@@ -205,6 +227,7 @@
     .social-icons a:hover {
       color: #ffe082;
     }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
@@ -214,9 +237,8 @@
 </head>
 <body>
 
-  <!-- Move Navigation to Top -->
-  <nav style="justify-content: flex-start; padding-left: 20px;">
-    <!-- Optional Logo at the start of the navigation bar -->
+  <!-- Navigation Bar -->
+  <nav>
     <img src="logo.png" alt="CloudXpress Logo" style="width: 100px; height: auto; margin-right: 20px;">
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -224,52 +246,62 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Banner/Header -->
   <header id="header">
+    <div class="header-social-icons">
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
     <h1>CloudXpress</h1>
     <p>Your Trusted IT Consulting Partner</p>
     <a href="#services"><button class="cta">Explore Services</button></a>
   </header>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
     <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure. We offer comprehensive training programs to enhance skills in various IT domains. Additionally, we provide internship opportunities for hands-on experience in real-world projects. Our goal is to empower businesses and individuals with the tools and knowledge to succeed in the ever-evolving tech landscape.</p>
   </section>
 
+  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services" id="service-tiles">
       <div class="card swirl">
         <i class="fas fa-cloud-upload-alt swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
+        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="">
         <h3>Cloud Migration</h3>
         <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
       </div>
       <div class="card swirl">
         <i class="fas fa-cogs swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="">
         <h3>DevOps Consulting</h3>
         <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
       </div>
       <div class="card swirl">
         <i class="fas fa-shield-alt swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
+        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg" alt="">
         <h3>Security & Compliance</h3>
         <p>Protect your infrastructure and meet industry standards with confidence.</p>
       </div>
       <div class="card">
-        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
+        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg" alt="">
         <h3>Internships</h3>
         <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
       </div>
       <div class="card swirl">
         <i class="fas fa-graduation-cap swirl-icon"></i>
-        <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200" alt="">
+        <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg" alt="">
         <h3>Azure Cloud Training</h3>
         <p>Master Azure services from scratch and gain certification-ready skills.</p>
       </div>
     </div>
   </section>
 
+  <!-- Careers Section -->
   <section id="careers">
     <h2>Careers</h2>
     <p>We're looking for dynamic, tech-savvy individuals. Join us and work on high-impact projects.</p>
@@ -277,6 +309,7 @@
     <p>mailto: akhila.kamineni@cloudxpress.co.uk</p>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Have questions or need more information? Get in touch with us:</p>
@@ -292,6 +325,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="social-icons">
       <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
@@ -302,6 +336,7 @@
     <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     const bannerImages = [
       'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900',
@@ -315,7 +350,6 @@
     }
     setInterval(changeBannerImage, 5000);
 
-    // Shuffle only swirl cards
     window.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('service-tiles');
       const cards = Array.from(container.querySelectorAll('.card.swirl'));
