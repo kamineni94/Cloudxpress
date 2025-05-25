@@ -2,222 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CloudXpress - IT Consulting Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
+      background-color: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
-    
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     nav {
-      background: #f57c00;
+      background-color: #f57c00;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
-      gap: 2rem;
-      z-index: 3;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
+
+    nav img {
+      height: 50px;
+    }
+
     nav a {
-      color: white;
+      margin: 0 1rem;
       font-weight: 600;
-      font-size: 1.2rem;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe082;
     }
 
     header {
+      position: relative;
       height: 90vh;
-      color: white;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 2rem;
-      position: relative;
+      color: white;
       overflow: hidden;
     }
 
     .banner-slider {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+      width: 100%; height: 100%;
       z-index: 0;
     }
 
-    .banner-track {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slideBanner 15s infinite linear;
-    }
-
     .banner-slide {
+      position: absolute;
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: center;
-      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
     }
 
-    .banner-slider.fade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.banner-slider.fade .banner-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-.banner-slider.fade .banner-slide:first-child {
-  opacity: 1;
-}
-
-
-    @keyframes slideBanner {
-      0%   { transform: translateX(0%); }
-      33%  { transform: translateX(-100%); }
-      66%  { transform: translateX(-200%); }
-      100% { transform: translateX(0%); }
+    .banner-slide:first-child {
+      opacity: 1;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
+      z-index: 1;
       margin: 0;
-      z-index: 2;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
+
     header p {
       font-size: 1.2rem;
+      z-index: 1;
       margin: 1rem 0;
-      z-index: 2;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
 
     .cta {
-      background: #ff9800;
+      background-color: #ff9800;
       color: white;
-      padding: 1rem 2rem;
       border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
       border-radius: 30px;
-      font-weight: bold;
       cursor: pointer;
-      margin-top: 1.5rem;
-      transition: background 0.3s;
-      z-index: 2;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      z-index: 1;
     }
-    .cta:hover { background: #fb8c00; }
+
+    .cta:hover {
+      background-color: #fb8c00;
+    }
 
     .header-social-icons {
       position: absolute;
       top: 20px;
       right: 30px;
-      z-index: 3;
+      z-index: 2;
     }
+
     .header-social-icons a {
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-left: 15px;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
+
     .header-social-icons a:hover {
       color: #ffe082;
     }
 
     section {
       padding: 4rem 2rem;
-      margin: auto;
-      border-radius: 10px;
-      position: relative;
-      background: #fff;
+      background-color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #f57c00;
+      text-align: center;
     }
 
     #about {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-        url('https://images.pexels.com/photos/1759245/pexels-photo-1759245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
-      background-size: cover;
+      background: url('https://images.pexels.com/photos/1759245/pexels-photo-1759245.jpeg') center/cover no-repeat;
       color: #333;
-      text-align: center;
-    }
-    #about h2 {
-      color: #f57c00;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+      background-blend-mode: lighten;
     }
 
     #services {
-      background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(255, 140, 0, 0.8));
+      background: linear-gradient(to right, #ffa726, #fb8c00);
       color: white;
-      text-align: center;
-    }
-    #services h2 {
-      color: #fff;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
 
     #careers {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
-        url('https://images.pexels.com/photos/1239296/pexels-photo-1239296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200');
-      background-size: cover;
+      background: url('https://images.pexels.com/photos/1239296/pexels-photo-1239296.jpeg') center/cover no-repeat;
       color: white;
-      text-align: center;
-    }
-    #careers h2 {
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    #contact {
-      background: #ffecb3;
-      color: #333;
-      padding-bottom: 2rem;
-    }
-    #contact h2 {
-      color: #f57c00;
-      text-align: center;
-    }
-
-    #contact p a {
-      color: #ff9800;
-      font-weight: bold;
+      background-blend-mode: darken;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background: white;
-      border-radius: 10px;
+      background-color: white;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
     }
 
     .card:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5), 0 0 20px rgba(255, 152, 0, 0.4);
-      z-index: 2;
-      animation: bounce 0.6s ease-out;
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
     }
 
     .card img {
@@ -229,239 +188,242 @@
     .card h3 {
       margin: 1rem;
       color: #ff9800;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
 
     .card p {
-      margin: 0 1rem 1.5rem;
-      padding: 1rem;
-      background: rgba(255, 152, 0, 0.2);
-      border-radius: 8px;
-      color: #333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      font-weight: 500;
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+      color: #444;
     }
 
     .swirl-icon {
-      font-size: 3rem;
+      font-size: 2rem;
       color: #ff9800;
-      margin: 1rem 0 0;
-      animation: swirl 2s infinite linear;
+      margin: 1rem;
+      animation: rotate 4s linear infinite;
     }
 
-    @keyframes swirl {
-      0% { transform: rotate(0deg); }
+    @keyframes rotate {
+      0% { transform: rotate(0); }
       100% { transform: rotate(360deg); }
+    }
+
+    #contact {
+      background-color: #ffecb3;
+      text-align: center;
+    }
+
+    #contact a {
+      color: #f57c00;
+      font-weight: bold;
     }
 
     .map {
       width: 100%;
-      height: 300px;
+      height: 250px;
       border-radius: 10px;
       margin-top: 1rem;
+      border: none;
     }
 
-    footer {
-      background: #ff9800;
+    .footer {
+      background-color: #f57c00;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
 
-    .social-icons a {
+    .footer a {
       margin: 0 10px;
       color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
     }
-    .social-icons a:hover {
+
+    .footer a:hover {
       color: #ffe082;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.5rem;
+      background: #f57c00;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #fb8c00;
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
-    }
 
-    @keyframes bounce {
-      0% { transform: scale(1); }
-      40% { transform: scale(1.1); }
-      60% { transform: scale(1.06); }
-      80% { transform: scale(1.08); }
-      100% { transform: scale(1.07); }
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .header-social-icons {
+        position: static;
+        margin-top: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav>
-    <img src="Black White and Yellow Simple Business Consulting Initials Logo.jpg" alt="CloudXpress Logo" style="width: 100px; height: auto; margin-right: 20px;">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#careers">Careers</a>
-    <a href="#contact">Contact</a>
+    <img src="Black White and Yellow Simple Business Consulting Initials Logo.jpg" alt="CloudXpress Logo" />
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <!-- Banner/Header -->
-  <header id="header">
-    <div class="banner-slider fade"></div>
+  <!-- Header -->
+  <header>
+    <div class="banner-slider"></div>
     <div class="header-social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-
-    <h1>CloudXpress</h1>
-    <p>Your Trusted IT Consulting Partner</p>
-    <a href="#services"><button class="cta">Explore Services</button></a>
+    <div>
+      <h1>CloudXpress</h1>
+      <p>Your Trusted IT Consulting Partner</p>
+      <a href="#services"><button class="cta">Explore Services</button></a>
+    </div>
   </header>
 
-  <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Our company CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure...</p>
-    </section>
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>CloudXpress specializes in IT consulting services, providing expert guidance to optimize your technology infrastructure...</p>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services">
-      <h2>Our Services</h2>
-      <div class="services" id="service-tiles">
-        <div class="card swirl">
-          <i class="fas fa-cloud-upload-alt swirl-icon"></i>
-          <img src="cm4.jpeg" alt="Cloud migration service image" loading="lazy" />
-          <h3>Cloud Migration</h3>
-          <p>Transition your legacy systems to Azure or AWS with minimal disruption.</p>
-        </div>
-        <div class="card swirl">
-          <i class="fas fa-cogs swirl-icon"></i>
-          <img src="dc5.jpeg" alt="DevOps consulting service image" loading="lazy" />
-          <h3>DevOps Consulting</h3>
-          <p>Build CI/CD pipelines and containerized applications with GitHub Actions and Kubernetes.</p>
-        </div>
-        <div class="card swirl">
-          <i class="fas fa-shield-alt swirl-icon"></i>
-          <img src="sc6.jpeg" alt="Security compliance service image" loading="lazy" />
-          <h3>Security & Compliance</h3>
-          <p>Protect your infrastructure and meet industry standards with confidence.</p>
-        </div>
-        <div class="card swirl">
-          <i class="fas fa-user-graduate swirl-icon"></i>
-          <img src="is.jpeg" alt="Internship opportunity image" loading="lazy" />
-          <h3>Internships</h3>
-          <p>Get real-world experience working on modern cloud projects with expert mentors.</p>
-        </div>
-        <div class="card swirl">
-          <i class="fas fa-graduation-cap swirl-icon"></i>
-          <img src="act7.jpeg" alt="Azure cloud training image" loading="lazy" />
-          <h3>Azure Training Course.pdf</h3>
-<p>Master Azure services from scratch and gain certification-ready skills.</p>
-<p>
-  <a href="azure-training-contents.txt" download style="color: #ff9800; font-weight: bold;" aria-label="Download Azure training outline">
-    📄 Azure Training Course
-  </a>
-</p>
-
-<form action="mailto:info@cloudxpress.co.uk" method="post" enctype="text/plain" style="margin-top: 1rem;">
-  <input type="text" name="Name" placeholder="Your Name" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 5px; border: 1px solid #ccc;">
-  <input type="email" name="Email" placeholder="Your Email" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 5px; border: 1px solid #ccc;">
-  <textarea name="Message" placeholder="Your enquiry about pricing..." rows="3" required style="width: 100%; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-  <button type="submit" style="background: #ff9800; color: white; padding: 0.6rem 1rem; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Submit Enquiry</button>
-</form>
-
-        </div>
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <i class="fas fa-cloud-upload-alt swirl-icon"></i>
+        <img src="cm4.jpeg" alt="Cloud migration" />
+        <h3>Cloud Migration</h3>
+        <p>Move your systems to Azure or AWS with minimal disruption.</p>
       </div>
-    </section>
-
-    <!-- Careers Section -->
-    <section id="careers">
-      <h2>Careers</h2>
-      <p>We're looking for dynamic, tech-savvy individuals...</p>
-    </section>
-
-    <section id="contact">
-  <h2>Contact Us</h2>
-  <p><a href="mailto:info@cloudxpress.co.uk">info@cloudxpress.co.uk</a></p>
-  <p>
-    <a href="https://wa.me/447466862056" target="_blank">
-      <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i>
-      +44 7466862056
-    </a>
-  </p>
-
-  <!-- Address + Maps Grid -->
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-    <!-- UK Office -->
-    <div style="flex: 1 1 300px;">
-      <p style="font-weight: 600; margin-bottom: 0.5rem;">UK Office:</p>
-      <p>1A Ridley Street, Leicester, LE30QL, United Kingdom</p>
-      <div class="map">
-        <iframe
-          src="https://maps.google.com/maps?q=1A%20Ridley%20Street%2C%20Leicester%2C%20LE30QL%2C%20United%20Kingdom&output=embed"
-          frameborder="0"
-          loading="lazy"
-          style="width:100%;height:100%;"
-          allowfullscreen>
-        </iframe>
+      <div class="card">
+        <i class="fas fa-cogs swirl-icon"></i>
+        <img src="dc5.jpeg" alt="DevOps consulting" />
+        <h3>DevOps Consulting</h3>
+        <p>Build CI/CD pipelines and containerized applications.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt swirl-icon"></i>
+        <img src="sc6.jpeg" alt="Security compliance" />
+        <h3>Security & Compliance</h3>
+        <p>Secure your infrastructure and meet standards.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-user-graduate swirl-icon"></i>
+        <img src="is.jpeg" alt="Internship opportunity" />
+        <h3>Internships</h3>
+        <p>Gain hands-on experience with cloud projects.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-graduation-cap swirl-icon"></i>
+        <img src="act7.jpeg" alt="Azure cloud training" />
+        <h3>Azure Training</h3>
+        <p>
+          <a href="azure-training-contents.txt" download>📄 Download Course Outline</a>
+        </p>
+        <form action="mailto:info@cloudxpress.co.uk" method="post" enctype="text/plain">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="3" placeholder="Your enquiry..."></textarea>
+          <button type="submit">Submit Enquiry</button>
+        </form>
       </div>
     </div>
+  </section>
 
-    <!-- USA Office -->
-    <div style="flex: 1 1 300px;">
-      <p style="font-weight: 600; margin-bottom: 0.5rem;">USA Office:</p>
-      <p>30 N Gould St Ste N, Sheridan, WY 82801, USA</p>
-      <div class="map">
-        <iframe
-          src="https://maps.google.com/maps?q=30%20N%20Gould%20St%20Ste%20N%2C%20Sheridan%2C%20WY%2082801%2C%20USA&output=embed"
-          frameborder="0"
-          loading="lazy"
-          style="width:100%;height:100%;"
-          allowfullscreen>
-        </iframe>
+  <!-- Careers -->
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>We’re looking for tech-savvy individuals to join our team...</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><a href="mailto:info@cloudxpress.co.uk">info@cloudxpress.co.uk</a></p>
+    <p><a href="https://wa.me/447466862056" target="_blank"><i class="fab fa-whatsapp"></i> +44 7466 862056</a></p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
+      <div style="flex: 1 1 300px;">
+        <h4>UK Office</h4>
+        <p>1A Ridley Street, Leicester, LE30QL</p>
+        <iframe class="map" src="https://maps.google.com/maps?q=1A%20Ridley%20Street%2C%20Leicester%2C%20LE30QL%2C%20United%20Kingdom&output=embed"></iframe>
+      </div>
+      <div style="flex: 1 1 300px;">
+        <h4>USA Office</h4>
+        <p>30 N Gould St Ste N, Sheridan, WY 82801</p>
+        <iframe class="map" src="https://maps.google.com/maps?q=30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801&output=embed"></iframe>
       </div>
     </div>
-  </div>
-</section>
-  </main>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <footer class="footer">
+    <div>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-    <p>&copy; 2025 CloudXpress. All Rights Reserved.</p>
+    <p>&copy; 2025 CloudXpress. All rights reserved.</p>
   </footer>
 
+  <!-- Banner JS -->
   <script>
-  const images = ['cx1.jpeg', 'cx2.jpeg', 'cx3.jpeg'];
-  let current = 0;
-  const banner = document.querySelector('.banner-slider.fade');
+    const images = ['cx1.jpeg', 'cx2.jpeg', 'cx3.jpeg'];
+    let current = 0;
+    const banner = document.querySelector('.banner-slider');
 
-  images.forEach((img, i) => {
-    const slide = document.createElement('div');
-    slide.className = 'banner-slide';
-    slide.style.backgroundImage = `url('${img}')`;
-    if (i === 0) slide.style.opacity = 1;
-    banner.appendChild(slide);
-  });
+    images.forEach((img, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'banner-slide';
+      slide.style.backgroundImage = `url('${img}')`;
+      if (i === 0) slide.style.opacity = 1;
+      banner.appendChild(slide);
+    });
 
-  const slides = document.querySelectorAll('.banner-slide');
-
-  function fadeNext() {
-    slides[current].style.opacity = 0;
-    current = (current + 1) % slides.length;
-    slides[current].style.opacity = 1;
-  }
-
-  setInterval(fadeNext, 5000);
-</script>
-
+    const slides = document.querySelectorAll('.banner-slide');
+    function fadeNext() {
+      slides[current].style.opacity = 0;
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = 1;
+    }
+    setInterval(fadeNext, 5000);
+  </script>
 </body>
-</html>
 </html>
